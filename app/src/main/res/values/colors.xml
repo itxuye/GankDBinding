@@ -6,4 +6,8 @@
 
   <color name="tab_unselect">#c9c9c9</color>
   <color name="bg_btn">#dadada</color>
+  <color name="bg_gray">#f0f0f0</color>
+
+  <color name="red">#F00</color>
+  <color name="text_gray">#9b9b9b</color>
 </resources>

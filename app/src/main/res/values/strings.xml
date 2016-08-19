@@ -3,4 +3,10 @@
   <string name="please_wait">正在加载...</string>
   <string name="press_again_exit">再按一次退出</string>
   <string name="点我">click</string>
+
+  <string name="tab_main">主页</string>
+  <string name="tab_favourite">收藏</string>
+  <string name="tab_message">消息</string>
+  <string name="tab_what">上原</string>
+  <string name="tab_mine">我的</string>
 </resources>

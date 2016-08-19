@@ -23,4 +23,14 @@
     <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
     <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
   </style>
+
+  <style name="MainTabLayout" parent="Widget.Design.TabLayout">
+    <item name="tabIndicatorColor">@android:color/transparent</item>
+         
+    <item name="tabIndicatorHeight">0dp</item>
+         
+    <item name="tabPaddingStart">12dp</item>
+         
+    <item name="tabPaddingEnd">12dp</item>
+  </style>
 </resources>
