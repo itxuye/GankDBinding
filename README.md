@@ -11,7 +11,7 @@ Rxjava+Retrofit+Dagger2+MVP+DataBinding练习
 * 使用MVP架构整个项目，对应于model、ui、presenter三个包
 * 使用Dagger2进行项目的解耦，实现P对V的注入，M对P的注入
 * 使用Glide做图片的处理和加载
-* 使用RecyclerView实现下拉刷新、上拉加载、侧滑删除、长按拖曳
+* 使用RecyclerView实现下拉刷新、上拉加载
 
 ###Todo
 收藏，搜索，内容细节,界面美化
