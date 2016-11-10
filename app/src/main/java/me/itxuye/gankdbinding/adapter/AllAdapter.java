@@ -80,11 +80,11 @@ public class AllAdapter extends RecyclerView.Adapter<BaseRevHolder<ItemMeiziBind
     binding.tvDesc.setText(meizi.desc);
     binding.tvTime.setText(DateUtil.toDateTimeStr(meizi.publishedAt));
     binding.tvAvatar.setVisibility(View.GONE);
-    binding.ivMeizi.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View view) {
-        mMeiziListener.onClick(holder, binding);
-      }
-    });
+    //binding.ivMeizi.setOnClickListener(new View.OnClickListener() {
+    //  @Override public void onClick(View view) {
+    //    mMeiziListener.onClick(holder, binding);
+    //  }
+    //});
 
     binding.rlGank.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
