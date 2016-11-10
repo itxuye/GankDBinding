@@ -10,7 +10,7 @@
       android:id="@+id/fl_tab_container"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_marginBottom="@dimen/bottombar_wechat_height"
+      android:layout_marginBottom="@dimen/bottombar_height"
       />
 
   <me.itxuye.gankdbinding.ui.view.BottomBar

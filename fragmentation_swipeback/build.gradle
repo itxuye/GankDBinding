@@ -1,15 +1,17 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+  compileSdkVersion 24
+  buildToolsVersion "23.0.3"
 
-    defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 24
-    }
+  defaultConfig {
+    minSdkVersion 15
+    targetSdkVersion 24
+  }
 }
 dependencies {
-    provided 'com.android.support:appcompat-v7:24.1.1'
-    provided project(':fragmentation')
+  provided('com.android.support:appcompat-v7:24.2.0') {
+    exclude module: 'support-v4'
+  }
+  provided project(':fragmentation')
 }

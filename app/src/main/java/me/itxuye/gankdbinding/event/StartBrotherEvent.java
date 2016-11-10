@@ -2,9 +2,6 @@ package me.itxuye.gankdbinding.event;
 
 import me.yokeyword.fragmentation.SupportFragment;
 
-/**
- * Created by YoKeyword on 16/6/30.
- */
 public class StartBrotherEvent {
     public SupportFragment targetFragment;
 

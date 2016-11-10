@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import me.itxuye.gankdbinding.R;
 import me.yokeyword.fragmentation.SupportFragment;
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
 
 public abstract class BaseLazyDataBindingFragment<T extends ViewDataBinding>
     extends SupportFragment {
@@ -22,6 +24,7 @@ public abstract class BaseLazyDataBindingFragment<T extends ViewDataBinding>
   private boolean mInited = false;
   private Bundle mSavedInstanceState;
   protected T b;
+  private CompositeSubscription mCompositeSubscription;
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -94,5 +97,24 @@ public abstract class BaseLazyDataBindingFragment<T extends ViewDataBinding>
     if (!TextUtils.isEmpty(msg)) {
       Snackbar.make(_mActivity.getWindow().getDecorView(), msg, Snackbar.LENGTH_SHORT).show();
     }
+  }
+
+  public void addSubscription(Subscription s) {
+    if (this.mCompositeSubscription == null) {
+      this.mCompositeSubscription = new CompositeSubscription();
+    }
+    this.mCompositeSubscription.add(s);
+  }
+
+  @Override public void onDestroyView() {
+    try {
+      if (this.mCompositeSubscription != null) {
+        this.mCompositeSubscription.unsubscribe();
+        this.mCompositeSubscription = null;
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    super.onDestroyView();
   }
 }

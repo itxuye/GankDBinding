@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import me.itxuye.gankdbinding.R;
 import me.itxuye.gankdbinding.event.StartBrotherEvent;
 import me.itxuye.gankdbinding.event.TabSelectedEvent;
+import me.itxuye.gankdbinding.ui.fragment.home.HomeFragment;
 import me.itxuye.gankdbinding.ui.view.BottomBar;
 import me.itxuye.gankdbinding.ui.view.BottomBarTab;
 import me.yokeyword.fragmentation.SupportFragment;
@@ -43,7 +44,7 @@ public class MainFragment extends SupportFragment {
     View view = inflater.inflate(R.layout.fragment_main, container, false);
 
     if (savedInstanceState == null) {
-      mFragments[FIRST] = FirstTabFragment.newInstance();
+      mFragments[FIRST] = HomeFragment.newInstance();
       mFragments[SECOND] = SecondTabFragment.newInstance();
       mFragments[THIRD] = ThirdTabFragment.newInstance();
       mFragments[FOURTH] = FourthTabFragment.newInstance();
@@ -54,7 +55,7 @@ public class MainFragment extends SupportFragment {
       // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
 
       // 这里我们需要拿到mFragments的引用,也可以通过getChildFragmentManager.getFragments()自行进行判断查找(效率更高些),用下面的方法查找更方便些
-      mFragments[FIRST] = findChildFragment(FirstTabFragment.class);
+      mFragments[FIRST] = findChildFragment(HomeFragment.class);
       mFragments[SECOND] = findChildFragment(SecondTabFragment.class);
       mFragments[THIRD] = findChildFragment(ThirdTabFragment.class);
       mFragments[FOURTH] = findChildFragment(FourthTabFragment.class);

@@ -9,4 +9,9 @@
   <string name="tab_message">消息</string>
   <string name="tab_what">上原</string>
   <string name="tab_mine">我的</string>
+  <string name="girl">妹子</string>
+  <string name="load_failed">加载失败啦</string>
+  <string name="retry">重试</string>
+  <string name="no_more_data">全部加载完成</string>
+  <string name="image_transition">image_transition</string>
 </resources>

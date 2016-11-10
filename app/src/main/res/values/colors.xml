@@ -8,6 +8,12 @@
   <color name="bg_btn">#dadada</color>
   <color name="bg_gray">#f0f0f0</color>
 
-  <color name="red">#F00</color>
+  <color name="blue">#5677fc</color>
+  <color name="red">#e51c23</color>
+  <color name="green">#259b24</color>
+  <color name="yellow">#ffeb3b</color>
+  <color name="white">#ffffff</color>
+  <color name="black">#000000</color>
+  <color name="grey">#515151</color>
   <color name="text_gray">#9b9b9b</color>
 </resources>

@@ -12,10 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import me.itxuye.gankdbinding.R;
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
 
 public abstract class BaseBackFragment<T extends ViewDataBinding> extends SwipeBackFragment {
 
   protected T b;
+  private CompositeSubscription mCompositeSubscription;
 
   @Nullable @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -49,5 +52,24 @@ public abstract class BaseBackFragment<T extends ViewDataBinding> extends SwipeB
     if (!TextUtils.isEmpty(msg)) {
       Snackbar.make(_mActivity.getWindow().getDecorView(), msg, Snackbar.LENGTH_SHORT).show();
     }
+  }
+
+  public void addSubscription(Subscription s) {
+    if (this.mCompositeSubscription == null) {
+      this.mCompositeSubscription = new CompositeSubscription();
+    }
+    this.mCompositeSubscription.add(s);
+  }
+
+  @Override public void onDestroyView() {
+    try {
+      if (this.mCompositeSubscription != null) {
+        this.mCompositeSubscription.unsubscribe();
+        this.mCompositeSubscription = null;
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    super.onDestroyView();
   }
 }

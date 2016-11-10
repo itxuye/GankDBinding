@@ -1,0 +1,27 @@
+def supportVersion = "25.0.0";
+def dagger2Version = "2.2";
+def leakcanaryVersion = "1.4-beta2";
+
+ext {
+  android = [compileSdkVersion        : 25,
+             buildToolsVersion        : "25.0.0",
+             applicationId            : "me.itxuye.gankdbinding",
+             minSdkVersion            : 15,
+             targetSdkVersion         : 25,
+             versionCode              : 1,
+             versionName              : "1.0",
+             testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner",
+             multiDexEnabled          : true]
+
+  dependencies = ["desigh"                : "com.android.support:design:${supportVersion}",
+                  "cardview-v7"           : "com.android.support:cardview-v7:${supportVersion}",
+                  "recyclerview-v7"       : "com.android.support:recyclerview-v7:${supportVersion}",
+                  "multidex"              : "com.android.support:multidex:1.0.1",
+                  "support-fragment"      : "com.android.support:support-fragment:${supportVersion}",
+                  "constraint-layout"     : "com.android.support.constraint:constraint-layout:1.0.0-alpha4",
+                  "leakcanaryDebugCompile": "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}",
+                  "dagger2Compile"        : "com.google.dagger:dagger:${dagger2Version}",
+                  "dagger2Apt"            : "com.google.dagger:dagger-compiler:${dagger2Version}",
+
+  ]
+}
